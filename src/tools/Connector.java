@@ -10,7 +10,7 @@ import java.sql.Statement;
 import java.util.Properties;
 import com.mysql.cj.jdbc.Driver;
 
-public class MysqlConnector {
+public class Connector {
 
     /**
      * Creating new connection to database
