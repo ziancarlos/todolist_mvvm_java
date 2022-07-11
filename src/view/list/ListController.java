@@ -56,12 +56,23 @@ public class ListController {
 
     @FXML
     void deleteOnAction(ActionEvent event) {
+        try {
+            listViewModel.deleteTodo(table.getSelectionModel().getSelectedItem());
+        } catch (ClassNotFoundException | SQLException | IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
 
+        refreshTable();
     }
 
     @FXML
     void editOnAction(ActionEvent event) {
-
+        try {
+            vh.openUpdateView(table.getSelectionModel().getSelectedItem());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML

@@ -27,6 +27,7 @@ public class AddController {
 
         ownerTf.textProperty().bindBidirectional(addViewModel.getOwner());
         textTf.textProperty().bindBidirectional(addViewModel.getText());
+
     }
 
     @FXML

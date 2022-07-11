@@ -6,8 +6,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import model.Todo;
 import view.add.AddController;
 import view.list.ListController;
+import view.update.UpdateController;
 
 public class ViewHandler {
     private Stage stage;
@@ -50,6 +52,20 @@ public class ViewHandler {
         AddController controller = loader.getController();
 
         controller.init(this, vmf.getAddViewModel());
+
+        Scene scene = new Scene(root);
+
+        stage.setScene(scene);
+    }
+
+    public void openUpdateView(Todo todo) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/update/Update.fxml"));
+
+        Parent root = loader.load();
+
+        UpdateController controller = loader.getController();
+
+        controller.init(this, vmf.getUpdateViewModel(), todo);
 
         Scene scene = new Scene(root);
 

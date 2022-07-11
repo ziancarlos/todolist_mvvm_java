@@ -34,4 +34,8 @@ public class ListViewModel {
 
     }
 
+    public void deleteTodo(Todo todo) throws ClassNotFoundException, SQLException, IOException {
+        todoService.delete(todo.getId());
+    }
+
 }
